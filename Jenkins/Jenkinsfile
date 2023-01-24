@@ -1,0 +1,18 @@
+pipeline {
+        agent any
+	stages {
+	       stage('stage1'){
+	                steps {
+			      sh ' echo "build successful from github" ' 
+			      }
+			      }
+	       stage('stage2'){
+	                 steps{
+			      sh ' echo "build successful `hostname`" '
+				     
+			       }
+			       }
+
+	       }
+
+	 }      
