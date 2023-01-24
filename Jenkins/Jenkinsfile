@@ -12,6 +12,7 @@ pipeline {
 			           for i in {1..10}
 				   do
 				       Echo "build running on `hostname`"
+				   done    
 				  '''
 			       }
 			       }
