@@ -1,17 +1,24 @@
 pipeline {
         agent any
 	stages {
-	       stage('stage1'){
-	                steps {
-			      sh ' echo "build successful from github" ' 
-			      }
-			      }
-	       stage('stage2'){
-	                 steps{
-			      sh ' echo "build successful `hostname`" '
+	       stage('image_build'){
+	                      steps {
+			           sh '''
+			                  echo "building Docker image"
+				          docker image build -t image_pipeline1 ${WORKSPACE}/Docker
+                                 '''
+
+			             }
+			            }
+	       stage('image_tagging'){
+	                        steps {
+			             sh ''' 
+				             echo "tagging the image...." 
+					     docker image tag image_pipeline1:latest Ravi/image_pipeline1:latest
+					 '''    
 				     
-			       }
-			       }
+			               }
+			              }
 
 	       }
 
