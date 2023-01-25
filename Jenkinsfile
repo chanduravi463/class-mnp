@@ -5,7 +5,7 @@ pipeline {
 	                      steps {
 			           sh '''
 			                  echo "building Docker image"
-				          sudo docker run -itd centos:7
+				          docker run -itd centos:7
                                  '''
 
 			             }
