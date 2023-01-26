@@ -1,17 +1,17 @@
-pipeline {
-       agent any {
-               stages ('Build1') {
-	                      steps {
+pipeline{
+       agent any{
+               stages ('Build1'){
+	                      steps{
 			              sh 'echo "Build successful" '
-				     }
-				  }
-
-
-	        stages ('deloye') {
-		               steps {
-			               sh ' echo "deployment is successful"'
-				      }
 				   }
+				 }
+
+
+	        stages ('deploy'){
+		               steps{
+			               sh ' echo "deployment is successful"'
+				    }
+				 }
 
 		   }
 
